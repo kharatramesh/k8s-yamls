@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod6
+  name: pod5
+  namespace: itc
+spec:
+  containers:
+  - image: httpd
+    name: c1
+  - image: ubuntu
+    name: c2
+    command: ["sleep","5000"]
+  - image: mysql
+    name: c5
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        value: "123"
